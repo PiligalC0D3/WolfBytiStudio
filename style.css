@@ -1,0 +1,217 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  background-image: url('img/fundo1.jpg');
+  background-size: cover;        /* faz a imagem preencher toda a tela */
+  background-position: center;   /* centraliza a imagem */
+  background-repeat: no-repeat;  /* impede de repetir */
+  background-attachment: fixed;  /* efeito parallax (opcional) */
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  position: relative;
+  background: url('bg-future.jpg') no-repeat center/cover; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+header .logo {
+  width: 25%;
+  filter: drop-shadow(0 0 10px #00eaff);
+  margin-top: -4%;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #00eaff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  z-index: 2;
+  max-width: 700px;
+  padding-bottom: 80px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #00eaff;
+  text-shadow: 0 0 20px #00eaff;
+}
+
+.hero-content p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* BOTÃO NEON */
+.btn-neon {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  border: 2px solid #00eaff;
+  color: #00eaff;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.2s;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00eaff;
+}
+
+.btn-neon:hover {
+  color: #000;
+  background: #00eaff;
+  box-shadow: 0 0 20px #00eaff;
+}
+
+/* ===== SERVIÇOS ===== */
+.servicos {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.servicos h2 {
+  font-size: 2.5rem;
+  color: #00eaff;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #0a0a0a;
+  padding: 30px;
+  width: 300px;
+  border-radius: 12px;
+  border: 1px solid #00eaff40;
+  box-shadow: 0 0 20px #00eaff30;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #00eaff80;
+}
+
+/* ===== PROJETOS ===== */
+.projetos {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.projetos h2 {
+  font-size: 2.5rem;
+  color: #00eaff;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.project-box {
+  height: 180px;
+  background: #0a0a0a;
+  border-radius: 10px;
+  border: 1px solid #00eaff40;
+  box-shadow: 0 0 20px #00eaff30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CONTATO ===== */
+.contato {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 2.5rem;
+  color: #00eaff;
+  margin-bottom: 20px;
+}
+
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 2px,
+    transparent 4px
+  );
+  mix-blend-mode: overlay;
+}
+
+/*----------------------------------------------------------------------------*/
+
+.logo {
+  filter: drop-shadow(0 0 6px #6f9fa3)
+          drop-shadow(0 0 20px #00eaff)
+          drop-shadow(0 0 40px #00eaff);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    filter: drop-shadow(0 0 4px #5f868a) 
+            drop-shadow(0 0 8px #00eaff);
+  }
+  to {
+    filter: drop-shadow(0 0 12px #548f94) 
+            drop-shadow(0 0 25px #00eaff);
+  }
+}
+
+
+
+
+/* ===== efeitos test ===== */
+
