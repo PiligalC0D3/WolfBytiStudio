@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teste Canvas – Wolfbyte Studio</title>
+  <title>Matrix Rain Teste | Wolfbyte Studio</title>
 
   <style>
     /* RESET */
@@ -21,14 +21,14 @@
       font-family: monospace;
     }
 
-    /* CANVAS DE FUNDO */
-    #noiseCanvas {
+    /* CANVAS */
+    #matrixCanvas {
       position: fixed;
       inset: 0;
       z-index: 0;
     }
 
-    /* CONTEÚDO DE TESTE */
+    /* CONTEÚDO SOBREPOSTO */
     .content {
       position: relative;
       z-index: 2;
@@ -37,27 +37,27 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: #00ff88;
+      color: #00ff66;
       text-align: center;
     }
 
     h1 {
       font-size: 3rem;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       margin-bottom: 1rem;
-      text-shadow: 0 0 15px #00ff88;
+      text-shadow: 0 0 20px #00ff66;
     }
 
     p {
       max-width: 600px;
-      opacity: 0.8;
+      opacity: 0.75;
       margin-bottom: 2rem;
     }
 
     .btn {
       padding: 14px 32px;
-      border: 1px solid #00ff88;
-      color: #00ff88;
+      border: 1px solid #00ff66;
+      color: #00ff66;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -65,9 +65,9 @@
     }
 
     .btn:hover {
-      background: #00ff88;
+      background: #00ff66;
       color: #000;
-      box-shadow: 0 0 20px #00ff88;
+      box-shadow: 0 0 25px #00ff66;
     }
   </style>
 </head>
@@ -75,20 +75,20 @@
 <body>
 
   <!-- CANVAS -->
-  <canvas id="noiseCanvas"></canvas>
+  <canvas id="matrixCanvas"></canvas>
 
-  <!-- CONTEÚDO -->
+  <!-- CONTEÚDO DE TESTE -->
   <div class="content">
     <h1>WOLFBYTE STUDIO</h1>
     <p>
-      Página única de teste com efeito de malha animada em Canvas.
-      Ideal para ajustes de cor, densidade, velocidade e performance.
+      Efeito de malha/cachoeira digital estilo Matrix,
+      usando Canvas puro em uma única página HTML.
     </p>
     <a href="#" class="btn">Teste CSS</a>
   </div>
 
   <script>
-    const canvas = document.getElementById("noiseCanvas");
+    const canvas = document.getElementById("matrixCanvas");
     const ctx = canvas.getContext("2d");
 
     function resize() {
@@ -98,60 +98,39 @@
     resize();
     window.addEventListener("resize", resize);
 
-    const chars = [".", ".", ".", ":", ".", "0", "1", "0", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1",
-    
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", 
-    ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", 
-    "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", ".", "1", "1", "0", "0" , " 1", ":", ".", "." ];
-    const particles = [];
-    const TOTAL = 1600;
+    /* CONFIGURAÇÕES */
+    const chars = ["0", "1", ".", "+", "x", "ア", "ミ"];
+    const FONT_SIZE = 14;
+    const COLUMNS = Math.floor(window.innerWidth / FONT_SIZE);
+    const drops = [];
 
-    for (let i = 0; i < TOTAL; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        char: chars[Math.floor(Math.random() * chars.length)],
-        size: 8 + Math.random() * 3,
-        speed: 0.1 + Math.random() * 0.4,
-        jitter: Math.random() * 1.5,
-        alpha: 0.15 + Math.random() * 0.35
-      });
+    for (let i = 0; i < COLUMNS; i++) {
+      drops[i] = Math.random() * window.innerHeight;
     }
 
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      /* FUNDO COM RASTRO */
+      ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      const t = performance.now() * 0.002;
+      ctx.fillStyle = "#00ff66";
+      ctx.font = FONT_SIZE + "px monospace";
 
-      for (const p of particles) {
-        ctx.font = `${p.size}px monospace`;
-        ctx.fillStyle = "#00ff66";
-        ctx.globalAlpha = p.alpha;
+      for (let i = 0; i < drops.length; i++) {
+        const char = chars[Math.floor(Math.random() * chars.length)];
+        const x = i * FONT_SIZE;
+        const y = drops[i] * FONT_SIZE;
 
-        const jx = Math.sin(t + p.x * 0.01) * p.jitter;
-        const jy = Math.cos(t + p.y * 0.01) * p.jitter;
+        ctx.fillText(char, x, y);
 
-        ctx.fillText(p.char, p.x + jx, p.y + jy);
-
-        p.x += p.speed;
-        if (p.x > canvas.width) {
-          p.x = -20;
-          p.y = Math.random() * canvas.height;
+        /* RESET DA COLUNA */
+        if (y > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
         }
+
+        drops[i]++;
       }
 
-      ctx.globalAlpha = 1;
       requestAnimationFrame(animate);
     }
 
