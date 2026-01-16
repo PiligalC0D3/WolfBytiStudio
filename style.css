@@ -3,10 +3,36 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "MinhaFonte", sans-serif;
 }
 
+@font-face {
+  font-family: "MinhaFonte";
+  src: url("./assets/chelWolfFonte.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* BACKGROUND PARTICLES */
+#particles-js {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: radial-gradient(circle at center, #050505 0%, #000 60%);
+}
+
+/* garante que o conteúdo fique acima */
 body {
+  position: relative;
+  z-index: 1;
+}
+
+
+body {
+  font-family: "MinhaFonte", sans-serif;
   background: #000000;
   color: #ffffff;
   background-image: url('img/fundo1.jpg');
@@ -15,6 +41,11 @@ body {
   background-repeat: no-repeat;  /* impede de repetir */
   background-attachment: fixed;  /* efeito parallax (opcional) */
 }
+
+
+
+
+
 
 /* ===== HERO ===== */
 .hero {
@@ -70,7 +101,7 @@ nav a:hover {
 .hero-content h1 {
   font-size: 3rem;
   line-height: 1.2;
-  color: #00eaff;
+  color: #b2c7c7;
   text-shadow: 0 0 20px #00eaff;
 }
 
@@ -214,4 +245,6 @@ nav a:hover {
 
 
 /* ===== efeitos test ===== */
+
+
 
