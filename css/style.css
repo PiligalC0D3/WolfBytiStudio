@@ -6,60 +6,32 @@
   --accent: #00e0ff;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
 
 body {
-  background: var(--bg-dark);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
   color: var(--text-main);
   line-height: 1.6;
 
-
-
-
-/* === FUNDO BASE WOLFBYTE STUDIO === */
-
-
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Orbitron', sans-serif; /* ou a sua fonte */
-  color: #eafcff;
-
-  /* Fundo principal */
   background:
-    radial-gradient(
-      circle at top right,
-      rgba(0, 180, 255, 0.15),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at bottom left,
-      rgba(0, 120, 180, 0.12),
-      transparent 45%
-    ),
-    linear-gradient(
-      180deg,
-      #050b12 0%,
-      #070f1a 40%,
-      #04080f 100%
-    );
-
-  background-attachment: fixed;
+    radial-gradient(circle at top right, rgba(0, 180, 255, 0.15), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(0, 120, 180, 0.12), transparent 45%),
+    linear-gradient(180deg, #050b12 0%, #070f1a 40%, #04080f 100%);
 }
 
-
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   min-height: 100vh;
-  padding: 0px 0%;
   background: radial-gradient(circle at top, #0f172a, var(--bg-dark));
 }
 
-
+/* NAVBAR */
 .navbar {
   display: flex;
   align-items: center;
@@ -68,20 +40,58 @@ body {
   margin: 0 auto;
 }
 
-/* Empurra os links para a direita */
-.nav-links {
-  display: flex;
-  margin-left: auto; /* 🔥 chave do alinhamento */
-  gap: 32px; /* espaçamento entre links */
-  list-style: none;
-}
 .logo {
   height: 48px;
 }
 
+.nav-links {
+  display: flex;
+  margin-left: auto;
+  gap: 32px;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a,
+.btn-contato {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* HERO CONTENT */
 .hero-content {
-  max-width: 700px;
-  margin-top: 120px;
+  position: relative;
+  max-width: 900px;
+  margin: 120px auto 0;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* IMAGEM DE FUNDO DO HERO */
+.hero-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+  opacity: 0.35;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* TEXTO SOBRE A IMAGEM */
+.hero h1,
+.hero p,
+.hero .btn-primary {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -96,13 +106,22 @@ body {
   font-size: 1.1rem;
 }
 
-.btn-primary {
+/* ================= BOTÕES ================= */
+.btn-primary,
+.btn-secondary,
+.btn-contato {
   display: inline-block;
+  margin: 32px auto 0;
   padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
   background: var(--accent);
   color: #000;
-  font-weight: 600;
-  border-radius: 30px;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -112,9 +131,16 @@ body {
   box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
 }
 
-/* SECTIONS */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+/* ================= SECTIONS ================= */
 section {
   padding: 120px 8%;
+  text-align: center;
 }
 
 h2 {
@@ -122,13 +148,7 @@ h2 {
   margin-bottom: 24px;
 }
 
-/* ABOUT */
-.about p {
-  max-width: 600px;
-  color: var(--text-muted);
-}
-
-/* SERVICES */
+/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -140,7 +160,6 @@ h2 {
   background: var(--bg-light);
   padding: 40px;
   border-radius: 16px;
-  text-align: center;
   font-weight: 600;
   transition: transform 0.2s ease;
 }
@@ -151,7 +170,6 @@ h2 {
 
 /* CTA */
 .cta {
-  text-align: center;
   background: linear-gradient(180deg, var(--bg-dark), #020617);
 }
 
