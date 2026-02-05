@@ -64,26 +64,15 @@ body {
   cursor: pointer;
 }
 
-/* HERO CONTENT */
-.hero-content {
-  position: relative;
-  max-width: 900px;
-  margin: 120px auto 0;
-  text-align: center;
-  padding: 0 20px;
-}
 
 /* IMAGEM DE FUNDO DO HERO */
 .hero-image {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  
   width: 100%;
-  max-width: 900px;
-  transform: translate(-50%, -50%);
-  opacity: 0.35;
-  z-index: 1;
-  pointer-events: none;
+  height: 100vh;
+  object-fit: cover;
+  background-size: cover;
 }
 
 /* TEXTO SOBRE A IMAGEM */
@@ -107,6 +96,7 @@ body {
 }
 
 /* ================= BOTÕES ================= */
+.btn-contato1,
 .btn-primary,
 .btn-secondary,
 .btn-contato {
@@ -137,6 +127,11 @@ body {
   color: var(--accent);
 }
 
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #000;
+}
 /* ================= SECTIONS ================= */
 section {
   padding: 120px 8%;
