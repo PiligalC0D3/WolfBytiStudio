@@ -35,18 +35,19 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  padding: 24px 40px;
+  padding: 0px 30px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: -25px auto;
 }
 
 .logo {
-  height: 48px;
+  width: 20%;
+  
 }
 
 .nav-links {
   display: flex;
-  margin-left: auto;
+  margin-left: 60%;
   gap: 32px;
 }
 
@@ -95,18 +96,27 @@ body {
   font-size: 1.1rem;
 }
 
+  
+
+
+
+
 /* ================= BOTÕES ================= */
 .btn-contato1,
 .btn-primary,
 .btn-secondary,
 .btn-contato {
   display: inline-block;
-  margin: 32px auto 0;
+  margin: -8px auto 0;
   padding: 14px 32px;
   border-radius: 30px;
   font-weight: 600;
   cursor: pointer;
   text-align: center;
+  background: var(--accent);
+  color: #000;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary {
