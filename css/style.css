@@ -96,15 +96,14 @@ body {
   font-size: 1.1rem;
 }
 
-  
-
-
 
 
 /* ================= BOTÕES ================= */
 .btn-contato1,
 .btn-primary,
 .btn-secondary,
+.btn-projetos,
+.btn-contato2,
 .btn-contato {
   display: inline-block;
   margin: -8px auto 0;
@@ -117,6 +116,7 @@ body {
   color: #000;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
 }
 
 .btn-primary {
