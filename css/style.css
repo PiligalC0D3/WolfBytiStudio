@@ -38,17 +38,23 @@ body {
   padding: 0px 30px;
   max-width: 1200px;
   margin: -25px auto;
+  inline-size: auto;
+  
 }
 
 .logo {
   width: 20%;
+  top: 0;
+  left: -30%;
+  position: relative;
   
 }
 
 .nav-links {
   display: flex;
-  margin-left: 60%;
+  margin-left: 50%;
   gap: 32px;
+  align-items: center;
 }
 
 .nav-links li {
@@ -99,6 +105,7 @@ body {
 
 
 /* ================= BOTÕES ================= */
+.btn-servicos,
 .btn-contato1,
 .btn-primary,
 .btn-secondary,
