@@ -71,6 +71,27 @@ body {
   cursor: pointer;
 }
 
+h1 {
+  position: absolute;
+  top: 100px;
+  left: 97%;
+  transform: translateX(-50%);
+}
+
+/* CLASSE PARA O PARÁGRAFO DE IDEIAS */
+.Ideias { 
+  position: absolute;
+  top: 100px;
+  left: 97%;
+  transform: translateX(-50%);
+}
+
+.btn-servicos {
+  position: absolute;
+  top: 400px;
+  left: 52%;
+  transform: translateX(-50%);
+}
 
 /* IMAGEM DE FUNDO DO HERO */
 .hero-image {
