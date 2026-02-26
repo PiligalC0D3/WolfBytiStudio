@@ -133,8 +133,8 @@ h1 {
 .btn-projetos,
 .btn-contato2,
 .btn-contato {
-  display: inline-block;
-  margin: -8px auto 0;
+  display: block;
+  margin: 14px auto 0;
   padding: 14px 32px;
   border-radius: 30px;
   font-weight: 600;
@@ -170,6 +170,12 @@ h1 {
   background: var(--accent);
   color: #000;
 }
+
+btn-projetos {
+  display: block;
+  margin: 14px auto 0;
+}
+
 /* ================= SECTIONS ================= */
 section {
   padding: 120px 8%;
