@@ -41,12 +41,14 @@ body {
   inline-size: auto;
   z-index: 10;
   position: relative;
-    background: linear-gradient(
+ background: linear-gradient(
     90deg,
     transparent,
-    rgba(0, 224, 255, 0.8),
+    rgba(0, 224, 255, 0.9),
     transparent
   );
+
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.7);
 
   box-shadow: 0 0 12px rgba(0, 224, 255, 0.6);
   
