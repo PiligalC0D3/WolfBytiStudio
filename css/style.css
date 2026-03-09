@@ -1,3 +1,11 @@
+
+@font-face {
+  font-family: 'Maxengine';
+  src: url('./assets/Maxengine.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --bg-dark: #0b0f14;
   --bg-light: #111827;
@@ -15,7 +23,7 @@
 
 body {
   min-height: 100vh;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Maxengine', sans-serif;
   color: var(--text-main);
   line-height: 1.6;
 
@@ -49,11 +57,16 @@ body {
 
   background: rgba(5, 11, 18, 0.9);
   backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid rgba(0,224,255,0.4);
+
+  box-shadow:
+  0 0 10px rgba(0,224,255,0.3);
 }
 
 /* LOGO */
 .logo {
-  width: 120px;
+  width: 200px;
 }
 
 /* LINKS */
@@ -82,11 +95,31 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 
-  text-align: center;
+  text-align: right;
+
+  z-index: 2;
+
+  
   padding-top: 60px; /* espaço do navbar */
+  padding-right: 8%;
+  overflow: hidden;
 }
+
+.hero h1{
+  font-size: 3rem;
+  color: #7e999c;
+
+  text-shadow:
+    0 0 10px #566c6e,
+    0 0 20px #00e0ff,
+    0 0 40px #00e0ff;
+    z-index: 2;
+
+    margin-top: -30%;
+}
+
 
 /* IMAGEM DE FUNDO */
 .fundo1 {
@@ -96,12 +129,10 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  transform: translate(-50%, -50);
+
 }
 
-btn-projetos {
-  display: block;
-  margin: 14px auto 0;
-}
 
 /* ================= SECTIONS ================= */
 section {
@@ -151,3 +182,5 @@ h2 {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+
+
