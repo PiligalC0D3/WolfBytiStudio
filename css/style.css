@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: 'Maxengine';
-  src: url('./assets/Maxengine.otf') format('opentype');
+  src: url('../fonts/chelWolfFonte.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -108,7 +108,7 @@ body {
 }
 
 .hero h1{
-  font-size: 3rem;
+  font-size: 6rem;
   color: #7e999c;
 
   text-shadow:
